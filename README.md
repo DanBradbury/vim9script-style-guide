@@ -15,66 +15,24 @@ Write documentation in .vim files in conformance with vimdoc standards.
 - Indent continued lines by two tabs (4 spaces)
 - Do not waste whitespace aligning common segments of similar commands. It is both difficult and expensive to maintain.
 
-<style>
-pre { white-space: pre-wrap; font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
-.Comment { color: #7e8e91; }
-.PreProc { color: #a6e22e; }
-.Statement { color: #f92672; font-weight: bold; }
-.LineNr { color: #465457; background-color: #232526; padding-bottom: 1px; }
-.Function { color: #a6e22e; }
-.Operator { color: #f92672; }
-.Normal { color: #f8f8f2; background-color: #1b1d1e; padding-bottom: 1px; }
-</style>
-
-<pre id='vimCodeElement'>
-<span id="L1" class="LineNr">1 </span><span class="Comment"># bad</span>
-<span id="L2" class="LineNr">2 </span><span class="Statement">command</span> <span class="Operator">-</span><span class="PreProc">bang</span> MyCommand  <span class="Function">call</span> myplugin#<span class="Normal">foo</span>()
-<span id="L3" class="LineNr">3 </span><span class="Statement">command</span>       MyCommand2 <span class="Function">call</span> myplugin#<span class="Normal">bar</span>()
-<span id="L4" class="LineNr">4 </span>
-<span id="L5" class="LineNr">5 </span><span class="Comment"># good</span>
-<span id="L6" class="LineNr">6 </span><span class="Statement">command</span> <span class="Operator">-</span><span class="PreProc">bang</span> MyCommand <span class="Function">call</span> myplugin#<span class="Normal">foo</span>()
-<span id="L7" class="LineNr">7 </span><span class="Statement">command</span> MyCommand2 <span class="Function">call</span> myplugin#<span class="Normal">bar</span>()
-</pre>
+![](wasted-alignment.png)
 
 #### Line Continuations
 - Prefer line continuations on semantic boundaries.
-```
-# good
-command SomeLongCommandName
-    call some#function()
 
-# bad
-command SomeLongCommandName call
-    some#function()
-```
+![](semantic-boundaries.png)
+
 - Don't use backslash to denote a line continuation.
-```
-# good
-autocommand BufEnter <buffer>
-    if !empty(val)
-      some#function()
-    endif
 
-# bad
-autocommand BufEnter <buffer>
-    \ if !empty(val)
-    \   some#function()
-    \ endif
-```
+![](no-backslash.png)
 
 #### Comments
 - Place a space after the `#` before the comment text.
-```
-# I am a comment line
-```
 - Do not use inline comments.
   - Where you would use an inline comment, put a line comment on the line above.
 - When leaving blank lines in comments, include the `#` in the blank line.
-```
-# I am one continuous
-#
-# comment block
-```
+
+![](comment-block.png)
 
 ### Strings
 Prefer single quoted strings. Specifically, in order of precedence:
