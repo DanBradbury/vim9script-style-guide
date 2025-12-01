@@ -14,16 +14,26 @@ Write documentation in .vim files in conformance with vimdoc standards.
   - You need not go out of your way to remove it.
 - Indent continued lines by two tabs (4 spaces)
 - Do not waste whitespace aligning common segments of similar commands. It is both difficult and expensive to maintain.
+<style>
+pre { white-space: pre-wrap; font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
+.Comment { color: #7e8e91; }
+.PreProc { color: #a6e22e; }
+.Statement { color: #f92672; font-weight: bold; }
+.LineNr { color: #465457; background-color: #232526; padding-bottom: 1px; }
+.Function { color: #a6e22e; }
+.Operator { color: #f92672; }
+.Normal { color: #f8f8f2; background-color: #1b1d1e; padding-bottom: 1px; }
+</style>
 
-```
-# bad
-command -bang MyCommand  call myplugin#foo()
-command       MyCommand2 call myplugin#bar()
-
-# good
-command -bang MyCommand call myplugin#foo()
-command MyCommand2 call myplugin#bar()
-```
+<pre id='vimCodeElement'>
+<span id="L1" class="LineNr">1 </span><span class="Comment"># bad</span>
+<span id="L2" class="LineNr">2 </span><span class="Statement">command</span> <span class="Operator">-</span><span class="PreProc">bang</span> MyCommand  <span class="Function">call</span> myplugin#<span class="Normal">foo</span>()
+<span id="L3" class="LineNr">3 </span><span class="Statement">command</span>       MyCommand2 <span class="Function">call</span> myplugin#<span class="Normal">bar</span>()
+<span id="L4" class="LineNr">4 </span>
+<span id="L5" class="LineNr">5 </span><span class="Comment"># good</span>
+<span id="L6" class="LineNr">6 </span><span class="Statement">command</span> <span class="Operator">-</span><span class="PreProc">bang</span> MyCommand <span class="Function">call</span> myplugin#<span class="Normal">foo</span>()
+<span id="L7" class="LineNr">7 </span><span class="Statement">command</span> MyCommand2 <span class="Function">call</span> myplugin#<span class="Normal">bar</span>()
+</pre>
 
 #### Line Continuations
 - Prefer line continuations on semantic boundaries.
