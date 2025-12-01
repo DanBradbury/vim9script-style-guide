@@ -14,6 +14,7 @@ Write documentation in .vim files in conformance with vimdoc standards.
   - You need not go out of your way to remove it.
 - Indent continued lines by two tabs (4 spaces)
 - Do not waste whitespace aligning common segments of similar commands. It is both difficult and expensive to maintain.
+
 <style>
 pre { white-space: pre-wrap; font-family: monospace; color: #f8f8f2; background-color: #1b1d1e; }
 .Comment { color: #7e8e91; }
