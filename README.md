@@ -147,7 +147,7 @@ def bar
 ```
 
 ### TODO
-Use TODO to note missing features or functionality that should be added at a later date.
+Use `TODO` to note missing features or functionality that should be added at a later date.
 
 ### FIXME
 Use `FIXME` to note broken code that needs to be fixed.
