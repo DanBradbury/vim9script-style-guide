@@ -1,19 +1,39 @@
-# vim9script Style Guide
+# Vim9 Script Style Guide
 ## Introduction
-This is inspired by [Google's Vimscript Style Guide](https://google.github.io/styleguide/vimscriptfull.xml). Similar to the original guide this is a casual version of the vim9script style guide. When submitting vim plugin code, you must adhere to these rules.
+This is inspired by [Google's Vimscript Style Guide](https://google.github.io/styleguide/vimscriptfull.xml). Similar to the original guide this is a casual version of the Vim9 Script style guide. When submitting vim plugin code, you must adhere to these rules.
 
 ## Style Guide
-### Documentation
-Write documentation in .vim files in conformance with vimdoc standards.
 
-### Whitespace
-- Use two spaces for indents.
-- Do not use tabs.
-- Use spaces around operators except for arguments to commands.
-- Do not introduce trailing whitespace.
-  - You need not go out of your way to remove it.
-- Indent continued lines by two tabs (4 spaces)
-- Do not waste whitespace aligning common segments of similar commands. It is both difficult and expensive to maintain.
+### Tabs or Spaces?
+Use only spaces for indentation. No hard tabs.
+
+### Indentation
+Use two spaces per indentation level (aka soft tabs).
+```
+# bad - four spaces
+def method()
+    do_something()
+enddef
+
+# good
+def method
+  do_something
+enddef
+```
+
+### No Trailing Whitespace
+Avoid trailing whitespace.
+
+### Line Endings
+Use Unix-style line endings.
+
+> [!TIP]
+> If you're using Git you might want to add the following conifg setting to protect from Windows line endings creeping in:
+>
+> `git config --global core.autocrlf true`
+
+### Don't waste whitespace aligning common segments.
+It is both difficult and expensive to maintain.
 
 ![](wasted-alignment.png)
 
@@ -52,3 +72,6 @@ Prefer single quoted strings. Specifically, in order of precedence:
 
 ### Built-in Functions
 - Prefer long names of built ins. (i.e. `tabstop` over `ts`)
+
+## Documentation
+Write documentation in .vim files in conformance with vimdoc standards.
