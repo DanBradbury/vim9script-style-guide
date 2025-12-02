@@ -4,7 +4,7 @@ This is inspired by [Google's Vimscript Style Guide](https://google.github.io/st
 
 ## Style Guide
 
-### Tabs or Spaces?
+### [Tabs or Spaces?](#)
 Use only spaces for indentation. No hard tabs.
 
 ### Indentation
